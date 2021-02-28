@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Album
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from .forms import AlbumsForm
 
 # Create your views here.
@@ -24,4 +24,6 @@ class AlbumsCreateView(CreateView):
     form_class = AlbumsForm
 
 
-
+class AlbumsDetailView(DetailView):
+    model = Album
+    template_name = 'albums/detail.html'
